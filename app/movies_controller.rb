@@ -24,7 +24,7 @@ end
 
 def can_be_created_in_a_block(args = {})
   Movie.create do |m|
-    puts "m = #{m}"
+    args.each {|key, value| m.send(("#{key}="), value)}
   end
 end
 
