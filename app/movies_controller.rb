@@ -22,7 +22,7 @@ def can_be_created_with_a_hash_of_attributes
   movie = Movie.create(attributes)
 end
 
-def can_be_created_in_a_block(args = {title: "Home Alone", release_date: 1990})
+def can_be_created_in_a_block(args = {title: "Home Alone"})
   Movie.create do |m|
     args.each {|key, value| m.send(("#{key}="), value)}
   end
